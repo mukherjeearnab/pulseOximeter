@@ -8,7 +8,7 @@
 #define IR_LED_CURRENT MAX30100_LED_CURR_50MA // The LEDs currents must be set to a level that 
 #define RED_LED_CURRENT MAX30100_LED_CURR_27_1MA // avoids clipping and maximises the dynamic range
 #define PULSE_WIDTH MAX30100_SPC_PW_1600US_16BITS // The pulse width of the LEDs driving determines
-#define HIGHRES_MODEtrue // the resolution of the ADC
+#define HIGHRES_MODE true // the resolution of the ADC
 
 // Create objects for the raw data from the sensor (used to make the trace) and the pulse and oxygen levels
 MAX30100 sensor; // Raw Data
