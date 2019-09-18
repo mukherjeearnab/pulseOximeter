@@ -7,32 +7,30 @@
 #include <Adafruit_ST7735.h>      // Hardware-specific library
 
 // Recommended settings for the MAX30100, DO NOT CHANGE!!!!,  refer to the datasheet for further info
-#
-define SAMPLING_RATE MAX30100_SAMPRATE_100HZ // Max sample rate
-# define IR_LED_CURRENT MAX30100_LED_CURR_50MA // The LEDs currents must be set to a level that 
-# define RED_LED_CURRENT MAX30100_LED_CURR_27_1MA // avoids clipping and maximises the dynamic range
-# define PULSE_WIDTH MAX30100_SPC_PW_1600US_16BITS // The pulse width of the LEDs driving determines
-# define HIGHRES_MODEtrue // the resolution of the ADC
+#define SAMPLING_RATE MAX30100_SAMPRATE_100HZ // Max sample rate
+#define IR_LED_CURRENT MAX30100_LED_CURR_50MA // The LEDs currents must be set to a level that 
+#define RED_LED_CURRENT MAX30100_LED_CURR_27_1MA // avoids clipping and maximises the dynamic range
+#define PULSE_WIDTH MAX30100_SPC_PW_1600US_16BITS // The pulse width of the LEDs driving determines
+#define HIGHRES_MODEtrue // the resolution of the ADC
 
 // Create objects for the raw data from the sensor (used to make the trace) and the pulse and oxygen levels
 MAX30100 sensor; // Raw Data
 PulseOximeter pox; // Pulse and Oxygen
 
 // The following settings adjust various factors of the display
-#
-define SCALING 12 // Scale height of trace, reduce value to make trace height
+#define SCALING 12 // Scale height of trace, reduce value to make trace height
 // bigger, increase to make smaller
-# define TRACE_SPEED 0.5 // Speed of trace across screen, higher=faster   
-# define TRACE_MIDDLE_Y_POSITION 41 // y pos on screen of approx middle of trace
-# define TRACE_HEIGHT 64 // Max height of trace in pixels    
-# define HALF_TRACE_HEIGHT TRACE_HEIGHT / 2 // half Max height of trace in pixels (the trace amplitude)    
-# define TRACE_MIN_Y TRACE_MIDDLE_Y_POSITION - HALF_TRACE_HEIGHT + 1 // Min Y pos of trace, calculated from above values
-# define TRACE_MAX_Y TRACE_MIDDLE_Y_POSITION + HALF_TRACE_HEIGHT - 1 // Max Y pos of trace, calculated from above values
+#define TRACE_SPEED 0.5 // Speed of trace across screen, higher=faster   
+#define TRACE_MIDDLE_Y_POSITION 41 // y pos on screen of approx middle of trace
+#define TRACE_HEIGHT 64 // Max height of trace in pixels    
+#define HALF_TRACE_HEIGHT TRACE_HEIGHT / 2 // half Max height of trace in pixels (the trace amplitude)    
+#define TRACE_MIN_Y TRACE_MIDDLE_Y_POSITION - HALF_TRACE_HEIGHT + 1 // Min Y pos of trace, calculated from above values
+#define TRACE_MAX_Y TRACE_MIDDLE_Y_POSITION + HALF_TRACE_HEIGHT - 1 // Max Y pos of trace, calculated from above values
 
 // Pins to use with the 7735 display
-# define TFT_CS 10 // Chop select
-# define TFT_RST 9 // Reset
-# define TFT_RS 8 // Register select
+#define TFT_CS 10 // Chop select
+#define TFT_RST 9 // Reset
+#define TFT_RS 8 // Register select
 
 int beepToggle;
 
