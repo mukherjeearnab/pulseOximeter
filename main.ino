@@ -1,9 +1,6 @@
 #include "MAX30100.h"           // Libraries required for the
-
 #include "MAX30100_PulseOximeter.h" // MAX30100 range sensors
-
 #include <Adafruit_GFX.h>       // Graphics library for drawin on screen
-
 #include <Adafruit_ST7735.h>      // Hardware-specific library
 
 // Recommended settings for the MAX30100, DO NOT CHANGE!!!!,  refer to the datasheet for further info
