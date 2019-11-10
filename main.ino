@@ -30,6 +30,7 @@ PulseOximeter pox; // Pulse and Oxygen
 #define TFT_RS 8 // Register select
 
 int beepToggle;
+int prev;
 
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_RS, TFT_RST);
 
@@ -48,6 +49,7 @@ void onBeatDetected() {
 }
 
 void setup() {
+  prev = LOW;
   beepToggle = 1;
   pinMode(5, OUTPUT); //BEEP PIN
   pinMode(4, OUTPUT); //BEEP LED
@@ -101,10 +103,15 @@ void setup() {
 
 void loop() {
 
-  if (digitalRead(3) == HIGH && beepToggle == 1)
-    beepToggle = 0;
-  else if (digitalRead(3) == HIGH && beepToggle == 0)
-    beepToggle = 1;
+  if (digitalRead(3) == HIGH && prev == LOW) {
+    if(beepToggle == 1)
+      beepToggle = 0;
+    else
+      beepToggle = 1;
+    prev = HIGH;
+  }
+  else if (digitalRead(3) == LOW && prev == HIGH)
+    prev = LOW;
   else;
   int16_t Diff = 0; // The difference between the Infra Red (IR) and Red LED raw results
   uint16_t ir, red; // raw results returned in these
